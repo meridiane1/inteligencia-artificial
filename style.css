@@ -1,0 +1,485 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+:root {
+    --fundo: #0b1020;
+    --superficie: #131b30;
+    --texto: #f4f6ff;
+    --texto-suave: #b2bdd3;
+    --roxo: #a78bfa;
+    --azul: #67e8f9;
+    --borda: rgba(255, 255, 255, 0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+}
+
+.cabecalho {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(11, 16, 32, 0.92);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--borda);
+}
+
+.navegacao {
+    max-width: 1180px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    color: var(--azul);
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.menu a {
+    color: var(--texto-suave);
+    font-size: 0.92rem;
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: var(--azul);
+}
+
+.menu-toggle {
+    display: none;
+    color: white;
+    background: transparent;
+    border: 0;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+.hero {
+    max-width: 1180px;
+    min-height: 620px;
+    margin: auto;
+    padding: 90px 24px;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.etiqueta, .subtitulo {
+    color: var(--azul);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 24px 0;
+    font-size: clamp(2.6rem, 5vw, 4.6rem);
+    letter-spacing: -2px;
+}
+
+h1 span {
+    display: block;
+    color: var(--roxo);
+}
+
+.hero-conteudo > p {
+    max-width: 600px;
+    color: var(--texto-suave);
+    font-size: 1.08rem;
+    margin-bottom: 32px;
+}
+
+.botao {
+    display: inline-block;
+    padding: 13px 22px;
+    border: 0;
+    border-radius: 10px;
+    background: linear-gradient(110deg, var(--roxo), var(--azul));
+    color: #101426;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+.botao:hover {
+    transform: translateY(-3px);
+    opacity: 0.92;
+}
+
+.hero-visual {
+    position: relative;
+    width: 310px;
+    height: 310px;
+    margin: auto;
+    display: grid;
+    place-items: center;
+}
+
+.cerebro {
+    display: grid;
+    place-items: center;
+    width: 150px;
+    height: 150px;
+    border-radius: 40px;
+    font-size: 5rem;
+    background: linear-gradient(145deg, #25244c, #142c49);
+    box-shadow: 0 0 80px rgba(167, 139, 250, 0.25);
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+.orbita {
+    position: absolute;
+    border: 1px solid rgba(103, 232, 249, 0.4);
+    border-radius: 50%;
+}
+
+.orbita-1 {
+    width: 230px;
+    height: 230px;
+}
+
+.orbita-2 {
+    width: 300px;
+    height: 300px;
+    border-color: rgba(167, 139, 250, 0.35);
+}
+
+.simbolo {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    background: var(--superficie);
+    color: var(--azul);
+    font-weight: 700;
+}
+
+.simbolo-1 {
+    top: 25px;
+    right: 25px;
+}
+
+.simbolo-2 {
+    bottom: 25px;
+    left: 20px;
+}
+
+.simbolo-3 {
+    top: 45%;
+    right: -15px;
+    color: var(--roxo);
+}
+
+@keyframes flutuar {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+.secao {
+    max-width: 1100px;
+    margin: auto;
+    padding: 90px 24px;
+    scroll-margin-top: 80px;
+}
+
+.secao h2, .reflexao h2 {
+    margin: 14px 0 24px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -1px;
+}
+
+.texto-central, .introducao {
+    max-width: 760px;
+    color: var(--texto-suave);
+}
+
+.destaque {
+    display: flex;
+    gap: 20px;
+    margin-top: 36px;
+    padding: 28px;
+    background: var(--superficie);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+}
+
+.icone {
+    font-size: 2rem;
+}
+
+.destaque h3 {
+    margin-bottom: 8px;
+}
+
+.destaque p, .card p, .desafio p {
+    color: var(--texto-suave);
+}
+
+.secao-cards {
+    max-width: 1180px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 36px;
+}
+
+.card {
+    padding: 30px;
+    border: 1px solid var(--borda);
+    background: var(--superficie);
+    border-radius: 18px;
+    transition: transform 0.25s, border-color 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: var(--roxo);
+}
+
+.icone-card {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 22px;
+}
+
+.card h3 {
+    margin-bottom: 12px;
+}
+
+.desafios {
+    border-top: 1px solid var(--borda);
+    border-bottom: 1px solid var(--borda);
+}
+
+.lista-desafios {
+    margin-top: 32px;
+}
+
+.desafio {
+    display: flex;
+    gap: 24px;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.desafio:last-child {
+    border-bottom: 0;
+}
+
+.desafio > span {
+    color: var(--azul);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.desafio h3 {
+    margin-bottom: 8px;
+}
+
+.quiz {
+    max-width: 760px;
+    margin-top: 32px;
+    padding: 30px;
+    border: 1px solid var(--borda);
+    background: var(--superficie);
+    border-radius: 18px;
+}
+
+.pergunta {
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.alternativas {
+    display: grid;
+    gap: 12px;
+}
+
+.alternativa {
+    padding: 16px;
+    text-align: left;
+    color: var(--texto);
+    background: #1a243c;
+    border: 1px solid var(--borda);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.alternativa:hover:not(:disabled) {
+    border-color: var(--azul);
+}
+
+.alternativa:disabled {
+    cursor: default;
+}
+
+.alternativa.correta {
+    border-color: #4ade80;
+    background: rgba(74, 222, 128, 0.12);
+}
+
+.alternativa.incorreta {
+    border-color: #fb7185;
+    background: rgba(251, 113, 133, 0.10);
+}
+
+.resultado {
+    margin-top: 20px;
+    font-weight: 600;
+}
+
+.botao-secundario {
+    margin-top: 16px;
+    background: transparent;
+    border: 1px solid var(--roxo);
+    color: var(--texto);
+}
+
+.reflexao {
+    padding: 85px 24px;
+    text-align: center;
+    background: linear-gradient(130deg, #171833, #102b3b);
+}
+
+.reflexao > div {
+    max-width: 800px;
+    margin: auto;
+}
+
+.reflexao p {
+    color: var(--texto-suave);
+}
+
+.rodape {
+    padding: 30px 24px;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--borda);
+}
+
+.rodape a {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--azul);
+}
+
+[hidden] {
+    display: none !important;
+}
+
+button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--azul);
+    outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+    .navegacao {
+        flex-wrap: wrap;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        gap: 16px;
+        padding-top: 20px;
+    }
+
+    .menu.aberto {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding-top: 65px;
+        text-align: center;
+    }
+
+    .hero-conteudo > p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-visual {
+        transform: scale(0.85);
+        margin-top: 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .secao {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .destaque {
+        padding: 20px;
+    }
+
+    .quiz {
+        padding: 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
